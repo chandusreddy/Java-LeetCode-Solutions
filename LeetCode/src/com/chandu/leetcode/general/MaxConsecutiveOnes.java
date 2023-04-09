@@ -4,8 +4,12 @@
 package com.chandu.leetcode.general;
 
 /**
- * @author Chandu Given a binary array nums, return the maximum number of
- *         consecutive 1's in the array.
+ * @author Chandu 
+ * LeetCode:
+ *         https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3238/
+ * 
+ *         Given a binary array nums, return the maximum number of consecutive
+ *         1's in the array.
  * 
  * 
  * 
@@ -44,7 +48,7 @@ public class MaxConsecutiveOnes {
 
 	public static void main(String[] args) {
 
-		int[] nums = { 1, 0, 1, 1, 0,1,1,1,1 };
+		int[] nums = { 1, 0, 1, 1, 0, 1, 1, 1, 1 };
 		MaxConsecutiveOnes mo = new MaxConsecutiveOnes();
 		int maxcount = mo.findMaxConsectiveOnes(nums);
 		System.out.println("Finding the number of findMaxConsectiveOnes in the given array:  " + maxcount);
