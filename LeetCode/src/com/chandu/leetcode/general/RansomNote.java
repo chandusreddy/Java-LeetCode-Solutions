@@ -6,7 +6,7 @@ package com.chandu.leetcode.general;
 import java.util.HashMap;
 
 /**
- * @author swathireddyy
+ * @author Chandu
  * 
  *         LeetCode # 383 - Ransom Note
  * 
