@@ -24,43 +24,23 @@ public class SquaresOfaSortedArray {
 //        return nums;
 //    }
 
-	public static void sortedSquares(int[] nums) {
-		int n = nums.length;
-		int k;
-		for (k = 0; k < n; k++) {
-			if (nums[k] >= 0)
-				break;
-
-			int i = k - 1; // Initial index of first half
-			int j = k; // Initial index of second half
-			int ind = 0; // Initial index of temp numsay
-
-			int[] temp = new int[n];
-			while (i >= 0 && j < n) {
-				if (nums[i] * nums[i] < nums[j] * nums[j]) {
-					temp[ind] = nums[i] * nums[i];
-					i--;
-				} else {
-
-					temp[ind] = nums[j] * nums[j];
-					j++;
-				}
-				ind++;
+	public static int[] sortedSquares(int[] nums) {
+		int[] sortedarray = new int[nums.length];
+		int smallindex = 0;
+		int largeindex = nums.length - 1;
+		for (int i = nums.length - 1; i >= 0; i--) {
+			int smallindexval = nums[smallindex];
+			int largeindexval = nums[largeindex];
+			if (Math.abs(smallindexval) > Math.abs(largeindexval)) {
+				sortedarray[i] = smallindexval * smallindexval;
+				smallindex++;
+			} else {
+				sortedarray[i] = largeindexval * largeindexval;
+				largeindex--;
 			}
 
-			while (i >= 0) {
-				temp[ind++] = nums[i] * nums[i];
-				i--;
-			}
-			while (j < n) {
-				temp[ind++] = nums[j] * nums[j];
-				j++;
-			}
-
-			// copy 'temp' numsay into original numsay
-			for (int x = 0; x < n; x++)
-				nums[x] = temp[x];
 		}
+		return sortedarray;
 
 	}
 
@@ -73,11 +53,11 @@ public class SquaresOfaSortedArray {
 			System.out.print(nums[i] + " ");
 		}
 
-		sortedSquares(nums);
+		int[] sortednums = sortedSquares(nums);
 		System.out.println();
 		System.out.println("After Sorting : Squared values of the array are:");
 		for (int i = 0; i < n; i++) {
-			System.out.print(nums[i] + " ");
+			System.out.print(sortednums[i] + " ");
 		}
 
 	}
